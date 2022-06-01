@@ -1,3 +1,15 @@
+# Truhuis Marketplace Client
+
+> __The front end is still in development and is not ready for public usage...__  
+> Hereunder is the example of what we are building here
+
+<br/>
+<p align="center">
+<img src="https://github.com/truhuis/truhuis-marketplace-client/blob/main/truhuis-marketplace-demo.JPG" width="225" alt="Truhuis Marketplace Client template">
+</a>
+</p>
+<br/>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -5,8 +17,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
