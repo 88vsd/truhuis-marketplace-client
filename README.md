@@ -1,11 +1,11 @@
 # Truhuis Marketplace Client
 
-> __The front end is still in development and is not ready for public usage...__  
+> __The front end is still in development...__ ✍️
 > Hereunder is the example of what we are building here
 
 <br/>
 <p align="center">
-<img src="https://github.com/truhuis/truhuis-marketplace-client/blob/main/truhuis-marketplace-demo.JPG" width="225" alt="Truhuis Marketplace Client template">
+<img src="https://github.com/truhuis/truhuis-marketplace-client/blob/main/truhuis-marketplace-demo.JPG" width="675" alt="Truhuis Marketplace Client template">
 </a>
 </p>
 <br/>
