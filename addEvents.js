@@ -82,7 +82,7 @@ async function main() {
         chainId: moralisChainId,
         address: contractAddr,
         sync_historical: true,
-        topic: "RealEstateBought(address,address,uint256,uint256,uint256,uint8)",
+        topic: "RealEstatePurchased(address,address,uint256,uint256,uint256,uint8)",
         sync_historical: true,
         abi: {
             anonymous: false,
@@ -124,10 +124,10 @@ async function main() {
                     type: "uint8",
                 },
             ],
-            name: "RealEstateBought",
+            name: "RealEstatePurchased",
             type: "event",
         },
-        tableName: "RealEstateBought",
+        tableName: "RealEstatePurchased",
     };
 
     let listingCanceledOptions = {

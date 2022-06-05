@@ -6,6 +6,12 @@
 secret.env
 .env
 .env.local
+env
+secrets
+secret
+
+# Local development
+
 frp/
 
 # Deployments

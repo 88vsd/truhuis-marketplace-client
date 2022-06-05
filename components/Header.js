@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useMoralis } from "react-moralis";
 import { useEffect } from "react";
 
@@ -34,13 +35,16 @@ export default function Header() {
                     {/* Links */}
                     <div className="hidden flex-row md:flex">
                         {/* Truhuis Logo */}
-                        <div className="pr-9 basis-1/5 w-full">
+                        <div className="pr-9 pl-1 basis-1/5 w-full">
                             <Link href="/">
-                                <img src="/truhuis_logo.png" />
+                                <img
+                                    src="/truhuis_marketplace_logo.png"
+                                    alt="Truhuis Marketplace logo"
+                                />
                             </Link>
                         </div>
 
-                        <div className="w-full flex flex-row border-2 border-truhuisGrey xl:text-2xl divide-x-2  2xl:rounded-3xl xl:rounded-2xl md:rounded-xl lg:rounded-2xl divide-truhuisGrey bg-truhuisWhite text-truhuisGrey 2xl:text-3xl">
+                        <div className="w-full font-futura underline underline-offset-2 flex flex-row border-2 border-truhuisGrey xl:text-2xl divide-x-2  2xl:rounded-3xl xl:rounded-2xl md:rounded-xl lg:rounded-2xl divide-truhuisGrey bg-truhuisWhite text-truhuisGrey 2xl:text-3xl">
                             <button className="basis-1/5 rounded-l-2xl px-10 baseline 2xl:rounded-l-3xl xl:rounded-l-2xl md:rounded-l-xl lg:rounded-l-2xl ">
                                 <Link href="/verify">VERIFY</Link>
                             </button>

@@ -1,8 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/*@font-face {
-  font-family: "Futura";
-  src: url("../public/fonts/ADELIA.otf");
+
+@layer base {
+    @font-face {
+        font-family: "Futura";
+        font-style: medium;
+        src: url("/fonts/Futura-Medium.ttf");
+    }
+    @font-face {
+        font-family: "Futura-Bold";
+        font-style: bold;
+        src: url("/fonts/Futura-Bold.ttf");
+    }
+    @font-face {
+        font-family: "Futura-Italic";
+        font-style: italic;
+        src: url("/fonts/Futura-Medium-Italic.ttf");
+    }
 }
-*/

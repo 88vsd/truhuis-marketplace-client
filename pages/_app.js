@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
             <Head>
                 <title>Truhuis Marketplace</title>
                 <meta name="description" content="Buy and sell your Truhuis NFT Real Estate" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/truhuis_marketplace_logo_square.ico" />
             </Head>
 
             <MainLayout>

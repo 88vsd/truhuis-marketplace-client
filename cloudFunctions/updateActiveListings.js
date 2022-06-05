@@ -86,7 +86,7 @@ Moralis.Cloud.afterSave("ListingCanceled", async (request) => {
     }
 });
 
-Moralis.Cloud.afterSave("RealEstateBought", async (request) => {
+Moralis.Cloud.afterSave("RealEstatePurchased", async (request) => {
     const confirmed = request.object.get("confirmed");
     const logger = Moralis.Cloud.getLogger();
     logger.info(`Marketplace | Object: ${request.object}`);
@@ -100,10 +100,10 @@ Moralis.Cloud.afterSave("RealEstateBought", async (request) => {
 
         logger.info(`Marketplace | Query: ${query}`);
 
-        const boughtRealEstate = await query.first();
-        if (boughtRealEstate) {
+        const purchasedRealEstate = await query.first();
+        if (purchasedRealEstate) {
             logger.info(`Deleting ${request.object.get("objectId")}`);
-            await boughtRealEstate.destroy();
+            await purchasedRealEstate.destroy();
             logger.info(
                 `Deleted listing with tokenId ${request.object.get(
                     "tokenId"

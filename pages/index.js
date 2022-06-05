@@ -10,7 +10,7 @@ export default function Home() {
     );
 
     return (
-        <div className="mx-auto grid grid-rows-1 ring-truhuisGrey rounded-3xl ring-2 relative">
+        <div className="mx-auto grid grid-rows-1 ring-truhuisGrey rounded-2xl ring-2 relative">
             <div className="grid grid-rows-1 grid-cols-3 divide-x-2 divide-truhuisGrey">
                 {isWeb3Enabled ? (
                     fetchingListedNFTs ? (
