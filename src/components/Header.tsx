@@ -1,11 +1,16 @@
 import Link from "next/link";
-import Image from "next/image";
 import { useMoralis } from "react-moralis";
 import { useEffect } from "react";
 
 export default function Header() {
-    const { enableWeb3, isWeb3Enabled, account, Moralis, deactivateWeb3, isWeb3EnableLoading } =
-        useMoralis();
+    const {
+        enableWeb3,
+        isWeb3Enabled,
+        account,
+        Moralis,
+        deactivateWeb3,
+        isWeb3EnableLoading,
+    } = useMoralis();
 
     useEffect(() => {
         if (isWeb3Enabled) return;
@@ -72,7 +77,10 @@ export default function Header() {
                                     onClick={async () => {
                                         await enableWeb3();
                                         if (typeof window !== "undefined") {
-                                            window.localStorage.setItem("connected", "injected");
+                                            window.localStorage.setItem(
+                                                "connected",
+                                                "injected"
+                                            );
                                         }
                                     }}
                                     disabled={isWeb3EnableLoading}

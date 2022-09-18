@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useWeb3Contract, useMoralis } from "react-moralis";
 import Image from "next/image";
-import { Card, useNotification } from "web3uikit";
+import { useNotification } from "web3uikit";
 import { ethers } from "ethers";
 import UpdateListingModal from "./UpdateListingModal";
 import {
@@ -11,18 +11,25 @@ import {
     getCadastreMapURL,
 } from "../helper-truhuis";
 
+interface INftCardProps {
+    tokenId: number;
+    initialPrice: number;
+    currencyAddr: string;
+    seller: string;
+}
+
 export default function NftCard({
     tokenId,
     initialPrice,
     currencyAddr,
     seller,
-    /*
+}: /*
     countryRealEstate,
     initialTime,
     coolingOffPeriod,
     stage,
     */
-}) {
+INftCardProps) {
     const { isWeb3Enabled, account } = useMoralis();
     const [imagesURLs, setImagesURLs] = useState("");
     const [cadastreMapURL, setCadastreMapURL] = useState("");
@@ -55,7 +62,7 @@ export default function NftCard({
         },
     });
 
-    const handlePurchaseRealEstateSuccess = async (tx) => {
+    const handlePurchaseRealEstateSuccess = async (tx: any) => {
         await tx.wait(1);
         dispatch({
             type: "success",
@@ -65,7 +72,7 @@ export default function NftCard({
         });
     };
 
-    const handleApproveERC20Success = async (tx) => {
+    const handleApproveERC20Success = async (tx: any) => {
         await tx.wait(1);
         dispatch({
             type: "success",
@@ -90,7 +97,10 @@ export default function NftCard({
         const tokenURI = await getTokenURI();
         console.log(`The tokenURI is ${tokenURI}`);
         if (tokenURI) {
-            const requestURL = tokenURI.replace("ipfs://", "https://ipfs.io/ipfs/");
+            const requestURL = (tokenURI as string).replace(
+                "ipfs://",
+                "https://ipfs.io/ipfs/"
+            );
             const tokenURIResponse = await (await fetch(requestURL)).json();
             const location = tokenURIResponse.attributes[0].location;
             const cadastreMapURI = tokenURIResponse.image;
@@ -160,14 +170,21 @@ export default function NftCard({
                                             {houseType}
                                         </div>
                                         <div className="">
-                                            {streetName} {streetNumber} {postcode}
+                                            {streetName} {streetNumber}{" "}
+                                            {postcode}
                                         </div>
                                         <div className="">{city}</div>
                                         <div className="mt-1 border border-truhuisGrey rounded-full w-full" />
                                         <div className="mt-1">
-                                            EURT {ethers.utils.formatUnits(initialPrice, "ether")}
+                                            EURT{" "}
+                                            {ethers.utils.formatUnits(
+                                                initialPrice,
+                                                "ether"
+                                            )}
                                         </div>
-                                        <div className="mt-1">TID {tokenId}</div>
+                                        <div className="mt-1">
+                                            TID {tokenId}
+                                        </div>
                                         <button
                                             className="h-9 mt-1 w-full font-bold text-white bg-truhuisBlue rounded-xl"
                                             onClick={handleCardClick}
@@ -214,12 +231,17 @@ export default function NftCard({
                                             {houseType}
                                         </div>
                                         <div className="">
-                                            {postcode} {streetName} {streetNumber}
+                                            {postcode} {streetName}{" "}
+                                            {streetNumber}
                                         </div>
                                         <div className="">{city}</div>
                                         <div className="my-1 border border-truhuisGrey rounded-full w-full" />
                                         <div className="">
-                                            USDT {ethers.utils.formatUnits(initialPrice, "ether")}
+                                            USDT{" "}
+                                            {ethers.utils.formatUnits(
+                                                initialPrice,
+                                                "ether"
+                                            )}
                                         </div>
                                         <div className="">TID {tokenId}</div>
                                         <button

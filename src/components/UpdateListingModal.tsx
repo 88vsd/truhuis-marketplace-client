@@ -5,6 +5,20 @@ import contractAddresses from "../constants/deployments/map.json";
 import { useWeb3Contract } from "react-moralis";
 import { ethers } from "ethers";
 
+export interface IUpdateListingModalProps {
+    isVisible: boolean;
+    onClose: () => void;
+    tokenId: number;
+    price?: string;
+    countryRealEstate?: string;
+    initialPrice?: number;
+    currency: string;
+    coolingOffPeriod?: number;
+    stage?: string;
+    seller?: string;
+    initialTime?: string;
+}
+
 export default function UpdateListingModal({
     price,
     tokenId,
@@ -17,13 +31,14 @@ export default function UpdateListingModal({
     seller,
     isVisible,
     onClose,
-}) {
+}: IUpdateListingModalProps) {
     let chainId = process.env.chainId || "dev";
 
     const dispatch = useNotification();
-    const [priceToUpdateListingWith, setPriceToUpdateListingWith] = useState(0);
+    const [priceToUpdateListingWith, setPriceToUpdateListingWith] =
+        useState("0");
 
-    const handleUpdateListingSuccess = async (tx) => {
+    const handleUpdateListingSuccess = async (tx: any) => {
         await tx.wait(1);
         // notification
         dispatch({
@@ -38,12 +53,14 @@ export default function UpdateListingModal({
 
     const { runContractFunction: updateListing } = useWeb3Contract({
         abi: TruhuisMarketplace.abi,
-        contractAddress: contractAddresses[chainId]["TruhuisMarketplace"][0],
+        contractAddress: contractAddresses["dev"]["TruhuisMarketplace"][0],
         functionName: "updateListing",
         params: {
             _currency: currency,
             _tokenId: tokenId,
-            _newPrice: ethers.utils.parseEther(priceToUpdateListingWith.toString()),
+            _newPrice: ethers.utils.parseEther(
+                priceToUpdateListingWith.toString()
+            ),
         },
     });
 
