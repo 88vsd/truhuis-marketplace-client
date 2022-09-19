@@ -500,7 +500,7 @@ export default function Example() {
                                         className="-m-2 flex items-center p-2"
                                     >
                                         <img
-                                            src="https://tailwindui.com/img/flags/flag-canada.svg"
+                                            src="/truhuis_logo.png"
                                             alt=""
                                             className="block h-auto w-5 flex-shrink-0"
                                         />
@@ -549,8 +549,8 @@ export default function Example() {
                                     </span>
                                     <img
                                         className="h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                        alt=""
+                                        src="/truhuis_logo.png"
+                                        alt="Truhuis Logo"
                                     />
                                 </a>
                             </div>
