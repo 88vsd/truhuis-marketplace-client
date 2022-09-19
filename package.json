@@ -9,6 +9,11 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@headlessui/react": "^1.7.2",
+        "@heroicons/react": "^2.0.11",
+        "@tailwindcss/aspect-ratio": "^0.4.2",
+        "@tailwindcss/forms": "^0.5.3",
+        "@tailwindcss/typography": "^0.5.7",
         "magic-sdk": "^9.0.0",
         "moralis": "^2.4.0",
         "moralis-v1": "^1.11.0",
