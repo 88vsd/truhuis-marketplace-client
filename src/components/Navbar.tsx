@@ -20,7 +20,7 @@ const navigation = {
                     items: [
                         {
                             name: "Register new municipality contract address",
-                            href: "#",
+                            href: "/addresser#register-municipality",
                         },
                     ],
                 },
@@ -28,10 +28,25 @@ const navigation = {
                     id: "update",
                     name: "Update",
                     items: [
-                        { name: "Update Truhuis contract address", href: "#" },
+                        {
+                            name: "Update Truhuis contract address",
+                            href: "/addresser#update-truhuis",
+                        },
                         {
                             name: "Update municipality contract address",
-                            href: "#",
+                            href: "/addresser#update-municipality",
+                        },
+                        {
+                            name: "Update tax administration contract address",
+                            href: "/addresser#update-tax-administration",
+                        },
+                        {
+                            name: "Update Personal Records Database contract address",
+                            href: "/addresser#update-personal-records-database",
+                        },
+                        {
+                            name: "Update price oracle contract address",
+                            href: "/addresser#update-price-oracle",
                         },
                     ],
                 },
@@ -207,7 +222,10 @@ const navigation = {
                     id: "personal-records-database",
                     name: "Personal Records Database",
                     items: [
-                        { name: "Store personal records", href: "#" },
+                        {
+                            name: "Store personal records",
+                            href: "/state#store-personal-records",
+                        },
                         {
                             name: "Submit request to update personal records",
                             href: "#",
@@ -220,7 +238,7 @@ const navigation = {
                     id: "tax-administration",
                     name: "Tax Administration",
                     items: [
-                        { name: "Update tax", href: "#" },
+                        { name: "Update tax", href: "/state#update-tax" },
                         { name: "Get data about tax", href: "#" },
                     ],
                 },
@@ -496,7 +514,7 @@ export default function Example() {
 
                                 <div className="border-t border-gray-200 py-6 px-4">
                                     <a
-                                        href="#"
+                                        href="/"
                                         className="-m-2 flex items-center p-2"
                                     >
                                         <img
@@ -543,7 +561,7 @@ export default function Example() {
 
                             {/* Logo */}
                             <div className="ml-4 flex lg:ml-0">
-                                <a href="#">
+                                <a href="/">
                                     <span className="sr-only">
                                         Your Company
                                     </span>
